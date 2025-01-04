@@ -29,7 +29,7 @@ WORKDIR /app
 COPY --from=build /out .
 
 # Выполняем миграции перед запуском
-RUN dotnet ef database update --no-build
+#RUN dotnet ef database update --no-build
 
 
 # Указываем команду для запуска приложения
