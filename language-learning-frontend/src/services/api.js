@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5039/api";
+const API_URL = "https://languagelearningapp-a32m.onrender.com/api";
 
 export const fetchWords = async () => {
     const response = await fetch(`${API_URL}/words`);
