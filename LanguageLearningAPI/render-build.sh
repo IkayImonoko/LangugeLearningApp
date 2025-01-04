@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Установка .NET SDK
-curl -sSL https://dotnet.microsoft.com/download/dotnet/8.0/installer/linux-x64 -o dotnet-sdk.tar.gz
-tar -xzf dotnet-sdk.tar.gz
+wget https://dotnet.microsoft.com/download/dotnet/8.0 -O dotnet-install.sh
+bash dotnet-install.sh
 
 
 # Добавление .NET в PATH
