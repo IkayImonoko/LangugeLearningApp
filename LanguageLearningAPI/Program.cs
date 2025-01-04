@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("https://ikayimonoko.github.io/") // Убедитесь, что адрес совпадает с React
+        policy.WithOrigins("https://ikayimonoko.github.io") // Убедитесь, что адрес совпадает с React
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
