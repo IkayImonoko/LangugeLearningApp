@@ -28,5 +28,9 @@ WORKDIR /app
 # Копируем собранное приложение
 COPY --from=build /out .
 
+# Выполняем миграции перед запуском
+RUN dotnet ef database update --no-build
+
+
 # Указываем команду для запуска приложения
 ENTRYPOINT ["dotnet", "LanguageLearningAPI.dll"]
