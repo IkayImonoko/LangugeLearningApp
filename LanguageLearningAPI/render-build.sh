@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 # Установка .NET SDK
-curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel LTS
+curl -sSL https://dotnet.microsoft.com/download/dotnet/8.0/installer/linux-x64 | bash
 
-# Добавление .NET SDK в PATH
-export PATH="$HOME/.dotnet:$PATH"
+# Добавление .NET в PATH
+echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
+source ~/.bashrc
 
-# Сборка проекта
+# Сборка и публикация проекта
 dotnet publish -c Release -o out
+
