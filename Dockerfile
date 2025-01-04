@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Copy project files and restore dependencies
 COPY *.sln .
-COPY LanguageLearningAPI/*.csproj ./api/
+COPY ./LanguageLearningAPI/*.csproj ./api/
 RUN dotnet restore
 
 # Copy the rest of the files and build the app
