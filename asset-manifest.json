@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/LangugeLearningApp/static/css/main.1fbcb675.css",
+    "main.js": "/LangugeLearningApp/static/js/main.9a6e224b.js",
+    "static/js/488.2e8a5741.chunk.js": "/LangugeLearningApp/static/js/488.2e8a5741.chunk.js",
+    "index.html": "/LangugeLearningApp/index.html",
+    "main.1fbcb675.css.map": "/LangugeLearningApp/static/css/main.1fbcb675.css.map",
+    "main.9a6e224b.js.map": "/LangugeLearningApp/static/js/main.9a6e224b.js.map",
+    "488.2e8a5741.chunk.js.map": "/LangugeLearningApp/static/js/488.2e8a5741.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1fbcb675.css",
+    "static/js/main.9a6e224b.js"
+  ]
+}
