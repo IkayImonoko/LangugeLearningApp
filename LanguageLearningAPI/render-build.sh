@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Установка .NET SDK
-curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel LTS
+curl -sSL https://aka.ms/getdotnet | bash
 
 
 # Добавление .NET в PATH
