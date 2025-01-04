@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Copy project files and restore dependencies
-COPY *.sln .
+COPY ./LanguageLearningAPI/*.sln .
 COPY ./LanguageLearningAPI/*.csproj ./api/
 RUN dotnet restore
 
