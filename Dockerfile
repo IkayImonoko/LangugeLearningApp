@@ -1,20 +1,32 @@
-# Use .NET SDK to build the app
+# Используем официальный .NET SDK образ
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Copy project files and restore dependencies
-COPY ./LanguageLearningAPI/*.sln .
-COPY ./LanguageLearningAPI/*.csproj ./api/
-RUN dotnet restore
+# Копируем файлы проекта
+COPY LanguageLearningAPI/*.csproj ./LanguageLearningAPI/
 
-# Copy the rest of the files and build the app
-COPY . .
-WORKDIR /app/api
-RUN dotnet publish -c Release -o out
+# Восстанавливаем зависимости
+RUN dotnet restore ./LanguageLearningAPI/LanguageLearningAPI.csproj
 
-# Use ASP.NET Core runtime for the final image
+# Копируем оставшиеся файлы проекта
+COPY LanguageLearningAPI/. ./LanguageLearningAPI/
+
+# Переходим в папку проекта
+WORKDIR /app/LanguageLearningAPI
+
+# Сборка приложения в режиме Release
+RUN dotnet publish -c Release -o /out
+
+# Используем минимальный образ для запуска
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
+
+# Устанавливаем рабочую директорию
 WORKDIR /app
-COPY --from=build /app/api/out .
-EXPOSE 5000
+
+# Копируем собранное приложение
+COPY --from=build /out .
+
+# Указываем команду для запуска приложения
 ENTRYPOINT ["dotnet", "LanguageLearningAPI.dll"]
