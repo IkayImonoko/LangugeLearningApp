@@ -26,6 +26,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Настроим слушание на всех интерфейсах (0.0.0.0:5039)
+app.Urls.Add("http://0.0.0.0:5039"); 
+
 /*var words = new List<Dictionary<string,string>> {
     new Dictionary<string,string> { { "Russian", "Привет" }, { "Norwegian", "Hei" } },
     new Dictionary<string,string> { { "Russian", "Спасибо" }, { "Norwegian", "Takk" } }
