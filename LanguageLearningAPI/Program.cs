@@ -14,13 +14,22 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("data source=language_learning.db"));
 
-builder.Services.AddCors(options =>
+/*builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
         policy.WithOrigins("http://gtolok.ru") // Убедитесь, что адрес совпадает с React
               .AllowAnyHeader()
               .AllowAnyMethod();
+    });
+});*/
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()  // Разрешить все источники
+              .AllowAnyMethod()  // Разрешить любые методы (GET, POST, и т.д.)
+              .AllowAnyHeader(); // Разрешить любые заголовки
     });
 });
 
@@ -43,7 +52,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors();
+app.UseCors("AllowAll");
 
 app.MapGet("/", () => "Welcome to the Language learning API");
 
