@@ -4,7 +4,7 @@ const WordList = () => {
     const [words, setWords] = useState([]);
 
     useEffect(() => {
-        fetch("https://languagelearningapp-a32m.onrender.com/api/words") // Замените  на ваш реальный бэкэнд URL
+        fetch("https://188.225.34.175:5039/api/words") // Замените  на ваш реальный бэкэнд URL
             .then((response) => response.json())
             .then((data) => setWords(data))
             .catch((error) => console.error("Error fetching words:", error));
