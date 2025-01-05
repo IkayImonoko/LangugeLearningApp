@@ -1,4 +1,4 @@
-const API_URL = "https://188.225.34.175:5039/api";
+const API_URL = "http://188.225.34.175:5039/api";
 
 export const fetchWords = async () => {
     const response = await fetch(`${API_URL}/words`);
