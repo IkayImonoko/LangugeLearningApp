@@ -8,6 +8,15 @@ h1 {
   background-color: #6e1173;
   color: rgb(0, 0, 0);
   padding: 1rem;
+  /*padding: 20px; /* Отступы внутри заголовка */
+      border-radius: 15px; /* Скруглённые углы */
+      text-shadow: 
+        -1px -1px 0 white, /* Верхний левый */
+        1px -1px 0 white,  /* Верхний правый */
+        -1px 1px 0 white,  /* Нижний левый */
+        1px 1px 0 white;   /* Нижний правый */
+      font-family: 'Arial Rounded MT Bold', 'Comic Sans MS', sans-serif; /* Скруглённый шрифт */
+      /*display: inline-block; /* Чтобы фон обтекал текст */
 }
 
 ul {

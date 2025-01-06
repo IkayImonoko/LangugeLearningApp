@@ -24,6 +24,16 @@ export const registreUser = async (username, email, password) => {
     });
 };
 
+export const deleteUser = async (userId) => {
+    const response = await fetch(`${API_URL}/users/${userId}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+    });
+    if (!response.ok) {
+        throw new Error(`Failed to delete user with ID: ${userId}`);
+      }
+};
+
 export const addWordToUser = async (userId, wordId) => {
     const response = await fetch(`${API_URL}/userwords`, {
         method: "POST",
