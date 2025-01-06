@@ -8,8 +8,24 @@ export const fetchWords = async () => {
     return response.json();
 };
 
+export const fetchUsers = async () => {
+    const response = await fetch(`${API_URL}/users`);
+    if (!response.ok) {
+        throw new Error("Failed to fetch users");
+    }
+    return response.json();
+};
+
+export const registreUser = async (username, email, password) => {
+    const response = await fetch(`${API_URL}/users`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({"username":username, "email":email, "passwordhash":password}),
+    });
+};
+
 export const addWordToUser = async (userId, wordId) => {
-    const response = await fetch(`${API_URL}/user-words`, {
+    const response = await fetch(`${API_URL}/userwords`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, wordId }),

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LanguageLearningAPI.Data;
 using LanguageLearningAPI.Models;
+using LanguageLearningAPI.Models.Dtos;
 
 namespace LanguageLearningAPI.Controllers
 {
@@ -44,8 +45,12 @@ namespace LanguageLearningAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] User user)
+        public async Task<IActionResult> CreateUser([FromBody] AddNewUserDto newUser)
         {
+            var user = new User();
+            user.Username = newUser.Username;
+            user.Email = newUser.Email;
+            user.PasswordHash = newUser.PasswordHash;
             _db.Users.Add(user);
             await _db.SaveChangesAsync();
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
