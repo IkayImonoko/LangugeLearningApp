@@ -46,3 +46,11 @@ export const addWordToUser = async (userId, wordId) => {
     }
     return response.json();
 };
+
+export const addWord = async (russian, norwegian) => {
+    const response = await fetch(`${API_URL}/words`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ russian, norwegian }),
+    })
+};

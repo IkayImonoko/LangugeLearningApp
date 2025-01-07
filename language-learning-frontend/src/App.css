@@ -28,3 +28,18 @@ li {
   padding: 0.5rem;
   border-bottom: 1px solid #ddd;
 }
+
+.word-list-container {
+  height: 120px; /* Задайте фиксированную высоту (примерно 5 строк) */
+  overflow-y: auto; /* Включите вертикальную прокрутку */
+  border: 1px solid #ccc; /* Необязательный стиль для видимой рамки */
+  padding: 5px; /* Внутренние отступы */
+  background-color: #f9f9f9; /* Фоновый цвет для улучшения визуального вида */
+  border-radius: 5px; /* Закругление углов */
+}
+
+.word-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Уберите стандартные маркеры списка */
+}

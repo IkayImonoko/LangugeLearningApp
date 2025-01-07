@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LanguageLearningAPI.Data;
 using LanguageLearningAPI.Models;
+using LanguageLearningAPI.Models.Dtos;
 
 namespace LanguageLearningAPI.Controllers
 {
@@ -43,8 +44,11 @@ namespace LanguageLearningAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateWord([FromBody] Word word)
+        public async Task<IActionResult> CreateWord([FromBody] AddNewWordDto newWord)
         {
+            var word = new Word();
+            word.Russian = newWord.Russian;
+            word.Norwegian = newWord.Norwegian;
             _db.Words.Add(word);
             await _db.SaveChangesAsync();
             return CreatedAtAction(nameof(GetWord), new { id = word.Id }, word);

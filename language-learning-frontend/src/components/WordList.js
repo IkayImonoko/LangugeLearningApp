@@ -15,13 +15,15 @@ const WordList = () => {
     return (
         <div>
             <h2>Word List</h2>
-            <ul>
+            <div className="word-list-container">
+            <ul className="word-list">
                 {words.map((word) => (
                     <li key={word.id}>
                         {word.russian} - {word.norwegian}
                     </li>
                 ))}
             </ul>
+            </div>
         </div>
     );
 };

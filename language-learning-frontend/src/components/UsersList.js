@@ -44,7 +44,8 @@ const UsersList = () => {
                 <button onClick={handleDelete} disabled={selectedUsers.length === 0}>
                 Delete users
                 </button>
-            <ul>
+            <div className="word-list-container">  
+            <ul className="word-list"> 
                 {users.map((user) => (
                     <li key={user.id} style={{ marginBottom: "10px" }}>
                         <label>
@@ -59,6 +60,7 @@ const UsersList = () => {
                     </li>
                 ))}
             </ul>
+            </div>
         </div>
     );
 };
