@@ -54,3 +54,13 @@ export const addWord = async (russian, norwegian) => {
         body: JSON.stringify({ russian, norwegian }),
     })
 };
+
+export const deleteWord = async (wordId) => {
+    const response = await fetch(`${API_URL}/words/${wordId}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+    });
+    if (!response.ok) {
+        throw new Error(`Failed to delete word with ID: ${wordId}`);
+      }
+};
