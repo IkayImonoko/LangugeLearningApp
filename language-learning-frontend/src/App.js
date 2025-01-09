@@ -8,7 +8,12 @@ import AddWordForm from './components/AddWordForm';
 function App() {
     return (
         <div className="App">
-            <h1>Language Learning App</h1>
+                <h1>Language Learning App
+                <button className="login-button">
+                    Login / Register
+                </button>
+                </h1>
+
             <AddWordForm/>
             <WordList />
             <UsersList/>
@@ -16,6 +21,6 @@ function App() {
         </div>
     );
 }
-
+  
 export default App;
 

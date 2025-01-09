@@ -5,6 +5,9 @@ body {
 }
 
 h1 {
+  display: flex;
+  justify-content: space-between; /* Раздвигает элементы */
+  align-items: center; /* Выравнивает элементы по вертикали */
   background-color: #6e1173;
   color: rgb(0, 0, 0);
   padding: 1rem;
@@ -43,3 +46,29 @@ li {
   padding: 0;
   list-style: none; /* Уберите стандартные маркеры списка */
 }
+
+.App-header {
+  display: flex;
+  justify-content: space-between; /* Раздвигает элементы */
+  align-items: center; /* Выравнивает элементы по вертикали */
+  background-color: #6e1173;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для кнопки */
+.login-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
