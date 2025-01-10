@@ -1,0 +1,28 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build artifacts
+bin/
+obj/
+
+# Local databases
+*.mdf
+*.ldf
+*.db
+
+# Configuration files
+appsettings.Development.json
+
+# Log files
+*.log
+
+# IDE-specific
+.idea/
+.vscode/
+
+# Temp files
+*.tmp
+*.swp
+*.bak
