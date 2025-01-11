@@ -47,14 +47,14 @@ li {
   list-style: none; /* Уберите стандартные маркеры списка */
 }
 
-.App-header {
+/*.App-header {
   display: flex;
   justify-content: space-between; /* Раздвигает элементы */
-  align-items: center; /* Выравнивает элементы по вертикали */
-  background-color: #6e1173;
+ /* align-items: center; /* Выравнивает элементы по вертикали */
+  /*background-color: #6e1173;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+}*/
 
 /* Стили для кнопки */
 .login-button {

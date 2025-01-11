@@ -19,22 +19,38 @@ function RegistrationForm() {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Пример валидации
-    if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
+  const handleRegister = async (event) => {
+    event.preventDefault(); // предотвратить стандартное поведение формы
 
     setError('');
-    console.log('Form submitted:', formData);
-    // Отправка данных на сервер
+        
+    try {
+      // Валидация
+      if (formData.password !== formData.confirmPassword) {
+        setError('Passwords do not match');
+        return;
+      }
+
+      // Отправка данных на сервер
+      await registreUser(formData.username, formData.email, formData.password);
+
+      setFormData({
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+      });
+      
+      // Очистить форму или выполнить другое действие после успешной регистрации
+      console.log('User registered successfully');
+    } catch (err) {
+      // Обработка ошибок
+      setError('Failed to register user. Please try again.');
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleRegister}>
       <h2>Register</h2>
       
       {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -87,7 +103,7 @@ function RegistrationForm() {
         />
       </div>
 
-      <button type="submit" onClick={() => registreUser(formData.username, formData.email, formData.password)}>Register</button>
+      <button type="submit">Register</button>
     </form>
   );
 }

@@ -1,24 +1,25 @@
 import React from 'react';
-import WordList from './components/WordList';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import RegistrationForm from './components/RegistrationForm';
-import UsersList from './components/UsersList';
-import AddWordForm from './components/AddWordForm';
+import MainPage from './pages/MainPage';
+import LoginPage from './pages/LoginPage';
+import UserPage from './pages/UserPage';
+import RegistrePage from './pages/RegistrePage';
+
 
 function App() {
     return (
+        <Router>
         <div className="App">
-                <h1>Language Learning App
-                <button className="login-button">
-                    Login / Register
-                </button>
-                </h1>
 
-            <AddWordForm/>
-            <WordList />
-            <UsersList/>
-            <RegistrationForm/>
+                <Routes>
+                    <Route path="/" element={<MainPage/>} />
+                    <Route path="/login" element={<LoginPage/>} />
+                    <Route path="/user" element={<UserPage/>}/>
+                    <Route path="/registre" element={<RegistrePage/>}/>
+                </Routes>
         </div>
+        </Router>
     );
 }
   
