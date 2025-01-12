@@ -1,5 +1,4 @@
 import LoginForm from '../components/LoginForm';
-import RegistrationForm from '../components/RegistrationForm';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function LoginPage() {

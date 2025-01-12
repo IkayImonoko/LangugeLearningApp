@@ -1,7 +1,7 @@
 import RegistrationForm from '../components/RegistrationForm';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-function RegistrePage() {
+function RegistrePage(userId) {
 return (
 <>
     <header>

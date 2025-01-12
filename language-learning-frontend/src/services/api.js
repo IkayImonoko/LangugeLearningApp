@@ -24,6 +24,17 @@ export const registreUser = async (username, email, password) => {
     });
 };
 
+export const getUser = async (userId) => {
+    const response = await fetch(`${API_URL}/users/${userId}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    });
+    if (!response.ok) {
+        throw new Error(`Failed to get user with ID: ${userId}`);
+      }
+      return response.json();
+};
+
 export const deleteUser = async (userId) => {
     const response = await fetch(`${API_URL}/users/${userId}`, {
         method: "DELETE",
@@ -64,3 +75,5 @@ export const deleteWord = async (wordId) => {
         throw new Error(`Failed to delete word with ID: ${wordId}`);
       }
 };
+
+
