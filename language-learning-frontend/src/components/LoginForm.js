@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchUsers } from '../services/api';
+import { AuthContext } from '../authContext';
+
 
 function LoginForm() {
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-  });
+    const { login } = useContext(AuthContext);
+    const [formData, setFormData] = useState({
+        username: '',
+        password: '',
+    });
 
-  const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
           fetchUsers()
               .then((data) => setUsers(data))
               .catch((error) => console.error("Error fetching users:", error));
       }, []);
 
-  const [error, setError] = useState('');
+    const [error, setError] = useState('');
 
-  const handleChange = (event) => {
+    const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -36,6 +39,7 @@ function LoginForm() {
 
     console.log('Fetched users:', user);
     if (user) {
+        login(user);
         // Если пользователь найден, перенаправляем на страницу пользователя
         navigate(`/user/${user.id}`); // Перенаправление на страницу пользователя (создайте такой маршрут)
       } else {
