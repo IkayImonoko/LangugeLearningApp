@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../authContext';
 import LogoutButton from '../components/LogoutButton';
+import TopBar from '../components/TopBar';
 
 
 function UserPage() {
@@ -29,11 +30,10 @@ function UserPage() {
     return(
     <>
         <header>
-            <h1>User Page, hello {user.username} </h1>
-                <Link to="/">
-                    <button className="home-button">Home</button>
-                </Link>
-                <LogoutButton/>
+            <TopBar/>
+            <Link to="/">
+                <button className="home-button">Home</button>
+            </Link>
 
         </header>
     </>
