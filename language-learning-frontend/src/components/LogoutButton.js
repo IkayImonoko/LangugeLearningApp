@@ -11,7 +11,7 @@ const LogoutButton = () => {
     navigate('/');
   };
 
-  return <button onClick={handleLogout}>Logout</button>;
+  return <button class="login-button" onClick={handleLogout}>Logout</button>;
 };
 
 export default LogoutButton;
