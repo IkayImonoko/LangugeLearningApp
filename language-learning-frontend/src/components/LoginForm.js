@@ -40,8 +40,11 @@ function LoginForm() {
     console.log('Fetched users:', user);
     if (user) {
         login(user);
-        // Если пользователь найден, перенаправляем на страницу пользователя
-        navigate(`/user/${user.id}`); // Перенаправление на страницу пользователя (создайте такой маршрут)
+        if (user.username == "test"){
+          navigate('/admin')
+        }
+        else {navigate(`/user/${user.id}`); // Перенаправление на страницу пользователя (создайте такой маршрут)
+        }
       } else {
         // Если пользователь не найден, показываем ошибку
         setError('Invalid username or password');

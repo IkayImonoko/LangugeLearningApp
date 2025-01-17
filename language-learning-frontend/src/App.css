@@ -34,10 +34,11 @@ li {
 
 .word-list-container {
   height: 120px; /* Задайте фиксированную высоту (примерно 5 строк) */
+  width: 300px;
   overflow-y: auto; /* Включите вертикальную прокрутку */
-  border: 1px solid #ccc; /* Необязательный стиль для видимой рамки */
+  border: 1px solid #eb0671; /* Необязательный стиль для видимой рамки */
   padding: 5px; /* Внутренние отступы */
-  background-color: #f9f9f9; /* Фоновый цвет для улучшения визуального вида */
+  background-color: #0387f3; /* Фоновый цвет для улучшения визуального вида */
   border-radius: 5px; /* Закругление углов */
 }
 
@@ -47,7 +48,7 @@ li {
   list-style: none; /* Уберите стандартные маркеры списка */
 }
 
-.App-header {
+.topbar {
   display: flex;
   justify-content: space-between; /* Раздвигает элементы */
   align-items: center; /* Выравнивает элементы по вертикали */

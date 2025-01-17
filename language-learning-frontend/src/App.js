@@ -6,7 +6,7 @@ import LoginPage from './pages/LoginPage';
 import UserPage from './pages/UserPage';
 import RegistrePage from './pages/RegistrePage';
 import PrivateRoute from './components/PrivateRoute';
-
+import AdminPage from './pages/AdminPage';
 
 function App() {
     return (
@@ -16,7 +16,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainPage/>} />
                     <Route path="/login" element={<LoginPage/>} />
-                    <Route path="/user/:id" element={ <PrivateRoute><UserPage/></PrivateRoute>}/>         
+                    <Route path="/user/:id" element={ <PrivateRoute><UserPage/></PrivateRoute>}/>
+                    <Route path="/admin" element={ <PrivateRoute><AdminPage/></PrivateRoute>}/>          
                     <Route path="/registre" element={<RegistrePage/>}/>
                 </Routes>
         </div>

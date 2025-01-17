@@ -5,12 +5,9 @@ import TopBar from '../components/TopBar';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function MainPage() {
     return(
-    <>
+    
     <TopBar/>
-    <AddWordForm /> 
-    <WordList />
-    <UsersList />
-    </>
+    
     );
 };
 
