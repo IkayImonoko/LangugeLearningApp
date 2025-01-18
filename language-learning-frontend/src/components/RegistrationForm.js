@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { registreUser } from '../services/api';
+import { fetchUsers } from '../services/api';
+import { useEffect } from 'react';
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -19,12 +21,28 @@ function RegistrationForm() {
     });
   };
 
+  const [users, setUsers] = useState([]);
+  
+      useEffect(() => {
+            fetchUsers()
+                .then((data) => setUsers(data))
+                .catch((error) => console.error("Error fetching users:", error));
+        }, []);
+
   const handleRegister = async (event) => {
     event.preventDefault(); // предотвратить стандартное поведение формы
 
     setError('');
         
     try {
+      const user = users.find(
+        (user) => user.username === formData.username || user.email === formData.email
+    );
+
+    if (user) {
+      setError('Username or password alredy exist');
+        return;
+    }
       // Валидация
       if (formData.password !== formData.confirmPassword) {
         setError('Passwords do not match');
