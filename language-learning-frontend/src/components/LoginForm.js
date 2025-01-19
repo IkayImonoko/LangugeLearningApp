@@ -49,16 +49,6 @@ function LoginForm() {
         // Если пользователь не найден, показываем ошибку
         setError('Invalid username or password');
       }
-
-    // Пример валидации
-    //if (formData.password !== formData.confirmPassword) {
-      //setError('Passwords do not match');
-      //return;
-    //}
-
-//setError('');
-    //console.log('Form submitted:', formData);
-    // Отправка данных на сервер
   };
 
   return (
