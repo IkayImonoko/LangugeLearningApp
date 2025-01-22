@@ -9,7 +9,7 @@ function MainPage() {
     <TopBar/>
     <p>Welcomr to russian/norwegian learning application!
         <br/>Have a fun!
-    </p>
+    </p>   
     </>
     );
 };

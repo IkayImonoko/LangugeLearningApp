@@ -9,7 +9,7 @@ const TopBar = () => {
     return(
 
         <header>
-        <h1 class="topbar">Language Learning App
+        <h1 className="topbar">Language Learning App
         {currentUser ? (
             <>
             <span> Welcome, {currentUser.username} </span>
