@@ -7,7 +7,7 @@ function MainPage() {
     return(
     <>
     <TopBar/>
-    <p>Welcomr to russian/norwegian learning application!
+    <p className='greetings'>Welcomr to russian/norwegian learning application!
         <br/>Have a fun!
     </p>   
     </>

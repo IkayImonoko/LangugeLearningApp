@@ -8,8 +8,8 @@ const TopBar = () => {
 
     return(
 
-        <header>
-        <h1 className="topbar">Language Learning App
+        <div className = "topbarcont">
+        <div className="topbar">Language Learning App
         {currentUser ? (
             <>
             <span> Welcome, {currentUser.username} </span>
@@ -20,8 +20,8 @@ const TopBar = () => {
             <button className="login-button">Login / Register</button>
           </Link>
         )}
-        </h1>
-    </header>
+        </div>
+        </div>
     );
 };
 export default TopBar;
